@@ -11,7 +11,7 @@ use warnings;
 use POSIX qw(strftime);
 use Data::Printer;
 use Furl;
-use JSON::Tiny;
+use JSON::Tiny qw(encode_json);
 use Sys::Hostname;
 use Data::UUID;
 use POSIX qw(strftime);
@@ -146,7 +146,7 @@ sub send {
     #     }
     # }
 
-    my $status = $self->_furl->post( $self->url, [ 'Content-Type' => ['application/json'] ], JSON::Tiny->encode_json( \%data ) );
+    my $status = $self->_furl->post( $self->url, [ 'Content-Type' => 'application/json' ], encode_json( \%data ) );
 
     return ( $status->is_success, $status->code );
 }
@@ -173,6 +173,12 @@ sub AUTOLOAD {
 
     # and perform the actual send
     return $self->send(%params);
+}
+
+# -----------------------------------------------------------------------------
+
+sub DESTROY {
+    return 1;
 }
 
 # -----------------------------------------------------------------------------
