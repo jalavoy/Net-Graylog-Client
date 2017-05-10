@@ -27,8 +27,8 @@ requires:
   URI::Escape::XS: 0
   constant: 0
   namespace::clean: 0
-  perl: v5.16.0
+  perl: 0
   strict: 0
   vars: 0
   warnings: 0
-version: 0.3
+version: 0.4

@@ -3,7 +3,7 @@
 
 package Net::Graylog::Client;
 {
-  $Net::Graylog::Client::VERSION = '0.3';
+  $Net::Graylog::Client::VERSION = '0.4';
 }
 
 use strict;
@@ -146,8 +146,7 @@ sub send {
     #     }
     # }
 
-    my $json = JSON::Tiny->new();
-    my $status = $self->_furl->post( $self->url, [ 'Content-Type' => ['application/json'] ], $json->encode( \%data ) );
+    my $status = $self->_furl->post( $self->url, [ 'Content-Type' => ['application/json'] ], JSON::Tiny->encode_json( \%data ) );
 
     return ( $status->is_success, $status->code );
 }
@@ -206,7 +205,7 @@ Net::Graylog::Client - Client for Graylog2 analysis server
 
 =head1 VERSION
 
-version 0.3
+version 0.4
 
 =head1 SYNOPSIS
 

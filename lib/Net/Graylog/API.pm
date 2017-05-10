@@ -7,10 +7,9 @@
 
 package Net::Graylog::API;
 {
-  $Net::Graylog::API::VERSION = '0.3';
+  $Net::Graylog::API::VERSION = '0.4';
 }
 
-use 5.16.0;
 use strict;
 use warnings;
 use Furl;
@@ -201,10 +200,7 @@ sub _validate_parameter {
 
         # we will let most things though as strings, no validation
         if ($format) {
-            if ( $format eq 'byte' ) {
-                $response = 'is not a byte' if ( $data !~ /^\C$/ );
-            }
-            elsif ( $format eq 'date' ) {
+            if ( $format eq 'date' ) {
 
                 # I am not checking if the actual values in the fields make sense
                 # allow dd/mm/yy dd/mm/yyyy yyyy/mm/dd xx/xx/xx
@@ -6478,7 +6474,7 @@ Net::Graylog::API - API Client for Net::Graylog::API
 
 =head1 VERSION
 
-version 0.3
+version 0.4
 
 =head1 SYNOPSIS
 
