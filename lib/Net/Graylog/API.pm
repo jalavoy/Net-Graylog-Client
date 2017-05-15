@@ -7,7 +7,7 @@
 
 package Net::Graylog::API;
 {
-  $Net::Graylog::API::VERSION = '0.5';
+  $Net::Graylog::API::VERSION = '0.4';
 }
 
 use strict;
@@ -6474,7 +6474,7 @@ Net::Graylog::API - API Client for Net::Graylog::API
 
 =head1 VERSION
 
-version 0.5
+version 0.4
 
 =head1 SYNOPSIS
 

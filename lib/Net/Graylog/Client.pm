@@ -3,7 +3,7 @@
 
 package Net::Graylog::Client;
 {
-  $Net::Graylog::Client::VERSION = '0.5';
+  $Net::Graylog::Client::VERSION = '0.4';
 }
 
 use strict;
@@ -211,7 +211,7 @@ Net::Graylog::Client - Client for Graylog2 analysis server
 
 =head1 VERSION
 
-version 0.5
+version 0.4
 
 =head1 SYNOPSIS
 

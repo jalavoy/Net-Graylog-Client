@@ -84,7 +84,7 @@ SKIP: {
             my $events_created = add_data($ukey);
 
             # give graylog a second or so to store and process the messages
-            sleep 10;
+            sleep 4;
 
             # find events that have our key
             $resp = $api->search_absolute_search_absolute( query => $ukey, from => '2017-01-01 00:00:00', to => '2018-01-01 00:00:00' );
