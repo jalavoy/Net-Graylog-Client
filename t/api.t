@@ -17,8 +17,6 @@ use strict;
 use warnings;
 use POSIX qw( strftime);
 use Data::Printer;
-use App::Basis;
-use App::Basis::Config;
 use Data::UUID;
 use Net::Graylog::Client qw( valid_levels);
 use Data::Dumper;

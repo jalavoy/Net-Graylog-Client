@@ -3,7 +3,7 @@
 
 package Net::Graylog::Client;
 {
-  $Net::Graylog::Client::VERSION = '0.5';
+  $Net::Graylog::Client::VERSION = '0.6';
 }
 
 use strict;
@@ -15,7 +15,6 @@ use JSON::Tiny qw(encode_json);
 use Sys::Hostname;
 use Data::UUID;
 use POSIX qw(strftime);
-use App::Basis;
 
 # use Mo qw( default is required );    # not using (build builder coerce)
 use Moo;
@@ -106,7 +105,6 @@ sub send {
     $data{timestamp}     = time();
     $data{timestr}       = strftime( "%Y-%m-%d %H:%M:%S", gmtime( time() ) );
     $data{host}          = $data{server} || $data{host} || hostname();
-    $data{logger} ||= get_program();
 
     # convert the level to match a syslog level and stop graylog fretting
     if ( defined $data{level} && $data{level} !~ /^\d+$/ ) {
@@ -211,7 +209,7 @@ Net::Graylog::Client - Client for Graylog2 analysis server
 
 =head1 VERSION
 
-version 0.5
+version 0.6
 
 =head1 SYNOPSIS
 
